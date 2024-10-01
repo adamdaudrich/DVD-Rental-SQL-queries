@@ -8,7 +8,8 @@ INNER JOIN category ON category.category_id = film_category.category_id
 WHERE payment.payment_date >= '2007-01-01 00:00:00' 
  AND  payment.payment_date <  '2008-01-01 00:00:00'
 GROUP BY category.name
-ORDER BY sum(amount) DESC;
+ORDER BY total_sales DESC;
+
 
 SELECT film.title, film.rental_rate, SUM(amount) AS total_amount
 FROM payment
